@@ -1,10 +1,12 @@
-version: '3'
+version: '3.5'
 services:
   python3:
     restart: always
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: 'python3'
-    working_dir: '/root/'
+    working_dir: '/usr/html'
     tty: true
     volumes:
-      - ./opt:/root/opt
+      - ./html:/usr/html
